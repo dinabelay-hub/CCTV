@@ -1,35 +1,38 @@
-# Postpartum Infection Detection Using Machine Learning
+# Low-Light CCTV Image Enhancement
 
-This repository contains the implementation of a machine learning pipeline for **real-time detection of postpartum infections** using vital signs (Body Temperature and Heart Rate). The work is part of ongoing research for **ICIP** submissions.
+This repository contains code for enhancing **low-light CCTV images** using classical image processing techniques such as **CLAHE**, **Gamma Correction**, and **Denoising**. It also includes quantitative evaluation using **PSNR**, **SSIM**, and **BRISQUE** metrics.  
+
+This project is part of research work for **ICIP**.
 
 ---
 
 ## 📂 Repository Contents
 
-- `logreg_pipeline.pkl` — Saved Logistic Regression pipeline (scaler + model)  
-- `rf_pipeline.pkl` — Saved Random Forest pipeline (optional)  
-- `notebooks/` — Jupyter/Colab notebooks with preprocessing, training, evaluation, and visualization  
-- `README.md` — Project overview and instructions  
+- `notebooks/` — Colab/Jupyter notebooks with preprocessing, enhancement, and evaluation pipelines  
+- `figures/` — Example images generated during experiments  
+- `README.md` — This file  
+
+> ⚠️ The full dataset is **too large** to host here.  
 
 ---
 
 ## 🧪 Dataset
 
-The model uses a vital-signs dataset. Due to size restrictions, the dataset is hosted externally. You can download it here:
+We used the **LoL-Dataset (Low-Light Images)**:
 
-[Low-Light Image Dataset (LoL-Dataset) on Hugging Face](https://huggingface.co/datasets/geekyrakshit/LoL-Dataset)  
+[LoL-Dataset on Hugging Face](https://huggingface.co/datasets/geekyrakshit/LoL-Dataset)
 
-> Note: Only the relevant columns (Body Temp, Heart Rate) are used for model training.  
-
-**Optional:** Include a small subset of the dataset in `sample_data/` for testing the pipeline quickly.
+- Contains **low-light input images** and **ground truth images**  
+- Use the `train` or `test` splits depending on your experiments  
+- Download and unzip; update paths in the notebook accordingly  
 
 ---
 
 ## ⚙️ Installation
 
-Clone this repository and install required packages:
+Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/dinabelay-hub/postpartum_infection_detection.git
-cd postpartum_infection_detection
+git clone https://github.com/dinabelay-hub/lowlight-cctv-enhancement.git
+cd lowlight-cctv-enhancement
 pip install -r requirements.txt
